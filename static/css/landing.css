@@ -1,0 +1,215 @@
+/* ------------------------------------------------------------------ */
+/* Hero — centered layout                                              */
+/* ------------------------------------------------------------------ */
+
+.hero {
+    display: block;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    background: var(--paper);
+}
+
+.hero-center {
+    max-width: 640px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Pill badge */
+.hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+}
+
+.hero-pill-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+/* Heading */
+.hero-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0;
+}
+
+.hero-heading-accent {
+    color: var(--accent);
+    font-style: italic;
+}
+
+/* Subtitle */
+.hero-desc {
+    font-size: 1rem;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    max-width: 480px;
+}
+
+/* Buttons */
+.hero-btns {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-hero-primary {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.75rem 1.6rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-hero-primary:hover { background: var(--ink-soft); }
+
+.btn-hero-secondary {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.75rem 1.6rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-hero-secondary:hover { background: var(--ink-soft); }
+
+/* Dashboard mockup */
+.hero-dash {
+    width: 100%;
+    max-width: 580px;
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    text-align: left;
+    margin-top: 0.5rem;
+}
+
+/* Window chrome dots */
+.dash-chrome {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.9rem 1.25rem;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.dash-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.dash-dot-red    { background: #ff5f57; }
+.dash-dot-yellow { background: #febc2e; }
+.dash-dot-green  { background: #28c840; }
+
+/* Stat cards row */
+.dash-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.dash-stat {
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.dash-stat + .dash-stat {
+    border-left: 1px solid var(--border-soft);
+}
+
+.dash-stat-label {
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+}
+
+.dash-stat-value {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--ink);
+    line-height: 1.2;
+}
+
+.dash-stat-sub {
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+}
+
+.dash-green { color: var(--accent); }
+
+/* Bar chart */
+.dash-bars {
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.dash-bar-row {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.dash-bar-label {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    font-weight: 500;
+}
+
+.dash-bar-track {
+    height: 8px;
+    background: var(--border-soft);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.dash-bar {
+    height: 100%;
+    border-radius: 999px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Responsive                                                          */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 600px) {
+    .hero { padding: 3.5rem 1.25rem 3rem; }
+    .hero-heading { font-size: 2rem; }
+    .hero-desc br { display: none; }
+    .dash-stats { grid-template-columns: 1fr; }
+    .dash-stat + .dash-stat { border-left: none; border-top: 1px solid var(--border-soft); }
+}
